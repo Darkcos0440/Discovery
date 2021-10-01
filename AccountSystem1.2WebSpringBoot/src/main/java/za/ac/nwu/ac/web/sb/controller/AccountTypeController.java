@@ -11,11 +11,11 @@ import org.springframework.web.bind.annotation.RestController;
 import za.ac.nwu.ac.domain.service.GeneralResponse;
 
 @RestController
-@RequestMapping("Account-Type")
+@RequestMapping("AccountType")
 public class AccountTypeController {
 
     @GetMapping("/all")
-    @ApiOperation(value = "Gets all the configured Account types.",notes = "Returns a list of account tipes")
+    @ApiOperation(value = "Gets all the configured Account types.",notes = "Returns a list of account types")
     @ApiResponses(value = {
             @ApiResponse(code = 200 ,message = "Account type returned", response = GeneralResponse.class),
             @ApiResponse(code = 400 ,message = "Bad Request", response = GeneralResponse.class),

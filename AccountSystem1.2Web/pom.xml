@@ -14,5 +14,18 @@
     <artifactId>AccountSystem1.2Web</artifactId>
     <packaging>war</packaging>
 
+    <dependencies>
+        <dependency>
+            <groupId>za.ac.nwu.ac</groupId>
+            <artifactId>AccountSystem1.2Domain</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>za.ac.nwu.ac</groupId>
+            <artifactId>AccountSystem1.2Logic</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+    </dependencies>
+
     
 </project>
