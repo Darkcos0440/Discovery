@@ -39,6 +39,12 @@
             <artifactId>ojdbc8</artifactId>
             <scope>compile</scope>
         </dependency>
+        <dependency>
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+            <version>1.4.199</version>
+            <scope>runtime</scope>
+        </dependency>
     </dependencies>
 
 </project>
