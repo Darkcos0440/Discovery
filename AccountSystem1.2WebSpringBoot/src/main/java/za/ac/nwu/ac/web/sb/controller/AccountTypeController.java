@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import za.ac.nwu.ac.domain.dto.AccountTypeDto;
 import za.ac.nwu.ac.domain.service.GeneralResponse;
 import za.ac.nwu.ac.logic.flow.FetchAccountTypeFlow;
 
@@ -33,10 +34,12 @@ public class AccountTypeController {
             @ApiResponse(code = 400 ,message = "Bad Request", response = GeneralResponse.class),
             @ApiResponse(code = 404 ,message = "Not found", response = GeneralResponse.class),
             @ApiResponse(code = 500 ,message = "Internal Server Error", response = GeneralResponse.class)})
-    //Doen iets hier
+
+    //Do something here - solved it :)
+
     public ResponseEntity<GeneralResponse<List<AccountTypeDto>>> getAll() {
         List<AccountTypeDto> accountTypes = fetchAccountTypeFlow.getAllAccountTypes();
-        GeneralResponse<List<AccountTypeDto>> response = new GeneralResponse<>(true, AccountTypes);
+        GeneralResponse<List<AccountTypeDto>> response = new GeneralResponse<>(true, accountTypes);
         return new ResponseEntity<>(response, HttpStatus.OK);
     }
 }
