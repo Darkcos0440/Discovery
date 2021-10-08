@@ -7,7 +7,7 @@ import java.time.LocalDate;
 import java.util.Objects;
 
 @Entity
-@Table(name = "DEMO_ACCOUNT_TYPE", schema = "VITRSA_SANDBOX")
+@Table(name = "DEMO_ACCOUNT_TYPE", schema = "ABIE")
 public class AccountType implements Serializable{
 
     @Id
@@ -33,6 +33,9 @@ public class AccountType implements Serializable{
     }
 
     public AccountType() {
+    }
+
+    public AccountType(String mnemonic, String accountTypeName, LocalDate creationDate) {
     }
 
     public Long getAccountTypeId() {
@@ -89,8 +92,7 @@ public class AccountType implements Serializable{
                 ", creationDate=" + creationDate +
                 '}';
     }
-
-
 }
+
 
 

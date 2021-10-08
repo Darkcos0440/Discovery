@@ -1,23 +1,21 @@
 package za.ac.nwu.ac.domain.persistence;
 
-
 import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.Objects;
 
 @Entity
-@Table(name = "DEMO_ACCOUNT_TYPE", schema = "VITRSA_SANDBOX")
+@Table(name = "ACCOUNTTRANSACTION",schema = "ABIE")
 public class AccountTransaction implements Serializable {
+
+//private static final long serialVersionUID = 1199041377884282633L;
 
     private Long transactionId;
     private Long accountTypeId;
     private Long memberId;
     private Long amount;
     private LocalDate transactionDate;
-
-    public AccountTransaction() {
-    }
 
     public AccountTransaction(Long transactionId, Long accountTypeId, Long memberId, Long amount, LocalDate transactionDate) {
         this.transactionId = transactionId;
@@ -27,15 +25,18 @@ public class AccountTransaction implements Serializable {
         this.transactionDate = transactionDate;
     }
 
+    public AccountTransaction() {
+    }
+
     @Id
-    @SequenceGenerator(name = "VIT_RSA_GENERIC_SEQ", sequenceName = "VITRSA_sANDBOX_VIT_RSA_GENERIC_SEQ", allocationSize = 1)
+    @SequenceGenerator(name = "VIT_RSA_GENERIC_SEQ", sequenceName = "VIT_RSA_SANDBOX.VIT_RSA_GENERIC_SEQ", allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "VIT_RSA_GENERIC_SEQ")
     @Column(name = "TX_ID")
     public Long getTransactionId() {
         return transactionId;
     }
 
-    @Column(name = "Member_ID")
+    @Column(name = "MEMBER_ID")
     public Long getMemberId() {
         return memberId;
     }
@@ -50,18 +51,8 @@ public class AccountTransaction implements Serializable {
         return transactionDate;
     }
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @Column(name = "ACCOUNT_TYPE_ID")
-    public Long getAccountTypeId() {
-        return accountTypeId;
-    }
-
     public void setTransactionId(Long transactionId) {
         this.transactionId = transactionId;
-    }
-
-    public void setAccountTypeId(Long accountTypeId) {
-        this.accountTypeId = accountTypeId;
     }
 
     public void setMemberId(Long memberId) {
@@ -93,7 +84,7 @@ public class AccountTransaction implements Serializable {
     public String toString() {
         return "AccountTransaction{" +
                 "transactionId=" + transactionId +
-                ", accountTypeId=" + accountTypeId +
+                ", accountType=" + accountTypeId +
                 ", memberId=" + memberId +
                 ", amount=" + amount +
                 ", transactionDate=" + transactionDate +
