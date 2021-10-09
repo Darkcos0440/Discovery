@@ -10,7 +10,6 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-
     <artifactId>AccountSystem1.2Repository</artifactId>
     <packaging>jar</packaging>
 

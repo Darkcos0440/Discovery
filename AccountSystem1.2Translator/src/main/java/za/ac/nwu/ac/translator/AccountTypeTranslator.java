@@ -1,5 +1,6 @@
 package za.ac.nwu.ac.translator;
 
+import za.ac.nwu.ac.domain.dto.AccountTransactionDto;
 import za.ac.nwu.ac.domain.dto.AccountTypeDto;
 import za.ac.nwu.ac.domain.persistence.AccountType;
 
@@ -14,4 +15,6 @@ public interface AccountTypeTranslator {
     AccountTypeDto getAccountTypeByMnemonicNativeQuery(String mnemonic);
 
     AccountTypeDto getAccountTypeDtoByMnemonic(String mnemonic);
+
+    //AccountTransactionDto create(AccountTransactionDto );
 }

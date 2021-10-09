@@ -15,28 +15,23 @@ import java.util.List;
 @Component
 public class FetchAccountTypeFlowImpl implements FetchAccountTypeFlow{
 
-    private AccountTypeTranslator accountTypeTranslator;
+    private final AccountTypeTranslator accountTypeTranslator;
+
+    @Override
+    public AccountTypeDto getAccountTypeByMnemonic(String mnemonic) {
+        return null;
+    }
 
     @Autowired
     public FetchAccountTypeFlowImpl(AccountTypeTranslator accountTypeTranslator) {
         this.accountTypeTranslator = accountTypeTranslator;
     }
 
-    //public FetchAccountTypeFlow(AccountTypeTranslator accountTypeTranslator){
-       // this.accountTypeTranslator = accountTypeTranslator;
-    //}
-
     @Override
     public List<AccountTypeDto> getAllAccountTypes() {
-        //List<AccountTypeDto> accountTypeDtos = new ArrayList<>();
-        //accountTypeDtos.add(new AccountTypeDto("MILES", "Miles", LocalDate.now()));
-        //return accountTypeDtos;
         return accountTypeTranslator.getAllAccountTypes();
+
     }
 
-    @Override
-    public AccountTypeDto getAccountTypeByMnemonic(String mnemonic){
-        return accountTypeTranslator.getAccountTypeDtoByMnemonic(mnemonic);
-    }
 
 }
