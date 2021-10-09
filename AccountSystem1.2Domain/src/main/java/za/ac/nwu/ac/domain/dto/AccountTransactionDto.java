@@ -111,8 +111,8 @@ public class AccountTransactionDto implements Serializable {
     }
 
     @JsonIgnore
-    public AccountTransaction getTransaction(AccountType accountType){
-        return new AccountTransaction(this.getTransactionId(), accountType, this.getMemberId(), this.getAmount(), this.getTransactionDate());
+    public AccountTransaction getTransaction(){
+        return new AccountTransaction(getTransactionId(),getMemberId(),getAmount(),getTransactionDate());
     }
 
 
@@ -138,7 +138,6 @@ public class AccountTransactionDto implements Serializable {
                 ", transactionDate=" + transactionDate +
                 '}';
     }
-
 
 }
 

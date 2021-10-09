@@ -16,7 +16,7 @@ public class AccountTransaction implements Serializable {
     private  long Amount;
     private LocalDate TR_Date;
 
-    public AccountTransaction(){
+    public AccountTransaction(Long accountTypeId, Long memberId, Long amount, LocalDate trDate){
 
     }
 
@@ -29,14 +29,14 @@ public class AccountTransaction implements Serializable {
     }
 
     @Id
-    @SequenceGenerator(name="ACCOUNTTRANSACTION_SEQ", sequenceName = "HR.ACCOUNTTRANSACTION_SEQ", allocationSize = 1)
+    @SequenceGenerator(name="ACCOUNTTRANSACTION_SEQ", sequenceName = "ABIE.ACCOUNTTRANSACTION_SEQ", allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "ACCOUNTTRANSACTION_SEQ")
     @Column(name = "TX_ID")
     public Long getTransactionId() {
         return Account_Tr_Id;
     }
 
-    @Column(name = "MEMBERID")
+    @Column(name = "MEMBER_ID")
     public Long getMemberId() {
         return MemberId;
     }

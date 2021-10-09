@@ -1,5 +1,6 @@
 package za.ac.nwu.ac.logic.flow.impl;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import za.ac.nwu.ac.domain.dto.AccountTransactionDto;
 import za.ac.nwu.ac.domain.persistence.AccountTransaction;
@@ -15,6 +16,7 @@ public class FetchAccountTransactionFlowImpl implements FetchAccountTransactionF
 
     private AccountTransactionTranslator translator;
 
+    @Autowired
     public FetchAccountTransactionFlowImpl (AccountTransactionTranslator translator) {
         this.translator = translator;
     }
