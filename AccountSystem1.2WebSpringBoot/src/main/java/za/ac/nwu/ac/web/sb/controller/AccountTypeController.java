@@ -11,7 +11,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import za.ac.nwu.ac.domain.dto.AccountTypeDto;
 import za.ac.nwu.ac.domain.service.GeneralResponse;
-//import za.ac.nwu.ac.logic.flow.FetchAccountTypeFlow;
 import za.ac.nwu.ac.logic.flow.CreateAccountTypeFlow;
 import za.ac.nwu.ac.logic.flow.FetchAccountTypeFlow;
 
@@ -58,7 +57,7 @@ public class AccountTypeController {
         return new ResponseEntity<>(response, HttpStatus.CREATED);
     }
 
-    @GetMapping("{mnemonic}") // fetch all configured account types
+    @GetMapping("{mnemonic}")
     @ApiOperation(value = "Fetch the specified Account Type", notes = "Fetches the Account Type based on the specific mnemonic")
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "Goal Found", response = GeneralResponse.class),

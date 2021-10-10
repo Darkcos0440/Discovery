@@ -13,7 +13,7 @@ public class AccountTransaction implements Serializable {
     private Long Account_Tr_Id;
     private AccountType accountType;
     private long MemberId;
-    private  long Amount;
+    private long Amount;
     private LocalDate TR_Date;
 
     public AccountTransaction(Long accountTypeId, Long memberId, Long amount, LocalDate trDate){
