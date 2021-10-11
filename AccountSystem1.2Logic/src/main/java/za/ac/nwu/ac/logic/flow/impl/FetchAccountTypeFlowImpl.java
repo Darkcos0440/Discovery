@@ -19,7 +19,7 @@ public class FetchAccountTypeFlowImpl implements FetchAccountTypeFlow{
 
     @Override
     public AccountTypeDto getAccountTypeByMnemonic(String mnemonic) {
-        return null;
+        return accountTypeTranslator.getAccountTypeDtoByMnemonic(mnemonic);
     }
 
     @Autowired

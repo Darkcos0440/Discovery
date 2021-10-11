@@ -86,9 +86,9 @@ public class AccountTransaction implements Serializable {
         return "AccountTransaction{" +
                 "transactionId=" + Account_Tr_Id +
                 ", accountType=" + accountType +
-                ", memberId=" + MemberId +
-                ", amount=" + Amount +
-                ", transactionDate=" + TR_Date +
+                ", MemberId=" + MemberId +
+                ", Amount=" + Amount +
+                ", TR_Date=" + TR_Date +
                 '}';
     }
 

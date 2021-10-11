@@ -7,4 +7,6 @@ import java.util.List;
 public interface AccountTransactionTranslator {
     AccountTransactionDto create(AccountTransactionDto accountTransaction);
     List<AccountTransactionDto> getAllTransactions();
+
+
 }

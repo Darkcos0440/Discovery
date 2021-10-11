@@ -8,6 +8,9 @@ import java.util.List;
 
 public interface AccountTypeTranslator {
 
+
+    //AccountTypeDto getAccountTypeByMnemonic(String mnemonic);
+
     List<AccountTypeDto> getAllAccountTypes();
 
     AccountTypeDto create(AccountTypeDto accountTypeDto);

@@ -1,5 +1,6 @@
 package za.ac.nwu.ac.logic.flow.impl;
 
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import za.ac.nwu.ac.domain.dto.AccountTransactionDto;
@@ -9,11 +10,15 @@ import za.ac.nwu.ac.translator.AccountTypeTranslator;
 
 import javax.transaction.Transactional;
 import java.time.LocalDate;
+import java.util.logging.Logger;
 
 
 @Transactional
 @Component("createAccountTransactionFlowName")
 public class CreateAccountTransactionFlowImpl implements CreateAccountTransactionFlow {
+
+    //private static final Logger LOGGER = LoggerFactory.getLogger(CreateAccountTransactionFlowImpl.class)
+
     private final AccountTransactionTranslator translator;
 
     @Autowired
@@ -22,11 +27,15 @@ public class CreateAccountTransactionFlowImpl implements CreateAccountTransactio
     }
 
     @Override
-    public AccountTransactionDto create(AccountTransactionDto accountTransaction) {
-        if (null == accountTransaction.getTransactionDate()) {
-            accountTransaction.setTransactionDate(LocalDate.now());
+    public AccountTransactionDto create(AccountTransactionDto accountTransactionDto) {
+
+        //LOGGER.info("The input object was {} ", accountTransactionDto);
+
+
+        if (null == accountTransactionDto.getTransactionDate()) {
+            accountTransactionDto.setTransactionDate(LocalDate.now());
         }
-        return translator.create(accountTransaction);
+        return translator.create(accountTransactionDto);
     }
 
 }
